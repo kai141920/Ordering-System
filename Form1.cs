@@ -38,10 +38,12 @@ namespace Ordering_System
             object sender,
             EventArgs e)
         {
+            // =====================================
             // VALIDATION
+            // =====================================
 
             if (txtUsername.Text == "" ||
-               txtPassword.Text == "")
+                txtPassword.Text == "")
             {
                 MessageBox.Show(
                     "Please enter email and password."
@@ -52,12 +54,16 @@ namespace Ordering_System
 
             try
             {
+                // =================================
                 // API URL
+                // =================================
 
                 string apiUrl =
                 "http://localhost:3000/api/customer/login";
 
+                // =================================
                 // LOGIN DATA
+                // =================================
 
                 var loginData = new
                 {
@@ -68,12 +74,16 @@ namespace Ordering_System
                     txtPassword.Text
                 };
 
-                // CONVERT TO JSON
+                // =================================
+                // JSON
+                // =================================
 
                 string json =
-                JsonConvert.SerializeObject(loginData);
+                JsonConvert.SerializeObject(
+                    loginData
+                );
 
-                var content =
+                StringContent content =
                 new StringContent(
                     json,
                     Encoding.UTF8,
@@ -83,7 +93,9 @@ namespace Ordering_System
                 using (HttpClient client =
                     new HttpClient())
                 {
+                    // =============================
                     // SEND REQUEST
+                    // =============================
 
                     HttpResponseMessage response =
                     await client.PostAsync(
@@ -91,21 +103,22 @@ namespace Ordering_System
                         content
                     );
 
-                    // RESPONSE STRING
-
                     string result =
-                    await response
-                    .Content
+                    await response.Content
                     .ReadAsStringAsync();
 
+                    // =============================
                     // SUCCESS
+                    // =============================
 
                     if (response.IsSuccessStatusCode)
                     {
+                        // =========================
+                        // DESERIALIZE
+                        // =========================
+
                         dynamic data =
                         JsonConvert.DeserializeObject(result);
-
-                        // SAVE SESSION
 
                         Session.customer_id =
                         data.customer.customer_id;
@@ -113,14 +126,18 @@ namespace Ordering_System
                         Session.fullname =
                         data.customer.fullname;
 
+                        // =========================
                         // DEBUG
+                        // =========================
 
                         MessageBox.Show(
-                            "Customer ID: " +
-                            Session.customer_id
+                            "Welcome " +
+                            Session.fullname
                         );
 
+                        // =========================
                         // OPEN PURCHASE
+                        // =========================
 
                         purchase dash =
                         new purchase();
@@ -132,7 +149,8 @@ namespace Ordering_System
                     else
                     {
                         MessageBox.Show(
-                            "Login Failed\n\n" + result
+                            "Login Failed\n\n" +
+                            result
                         );
                     }
                 }

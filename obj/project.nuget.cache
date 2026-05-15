@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2rZny++Vrj8=",
+  "dgSpecHash": "rgn1NeJUMzU=",
   "success": true,
-  "projectFilePath": "C:\\xampp\\htdocs\\PROJECTS\\Kijaw\\Ordering System\\Ordering System.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Ordering System.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ADMIN\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+    "C:\\Users\\Asus\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],
   "logs": []
 }

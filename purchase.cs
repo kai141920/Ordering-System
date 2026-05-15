@@ -16,6 +16,13 @@ namespace Ordering_System
         string apiUrl =
         "http://localhost:3000/api/order/customer/";
 
+        // =========================================
+        // HTTP CLIENT
+        // =========================================
+
+        HttpClient client =
+        new HttpClient();
+
         public purchase()
         {
             InitializeComponent();
@@ -29,6 +36,19 @@ namespace Ordering_System
             object sender,
             EventArgs e)
         {
+            // =====================================
+            // CHECK SESSION
+            // =====================================
+
+            if (Session.customer_id <= 0)
+            {
+                MessageBox.Show(
+                    "No logged in customer."
+                );
+
+                return;
+            }
+
             await LoadOrders();
         }
 
@@ -40,98 +60,67 @@ namespace Ordering_System
         {
             try
             {
-                using (HttpClient client =
-                    new HttpClient())
+                int customer_id =
+                Session.customer_id;
+
+                string url =
+                apiUrl + customer_id;
+
+                HttpResponseMessage response =
+                await client.GetAsync(url);
+
+                string json =
+                await response.Content
+                .ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
                 {
-                    // =====================================
-                    // CHECK SESSION
-                    // =====================================
-
-                    int customer_id =
-                    Session.customer_id;
-
                     MessageBox.Show(
-                        "Customer ID: " +
-                        customer_id
+                        "API ERROR\n\n" + json
                     );
 
-                    // =====================================
-                    // URL
-                    // =====================================
-
-                    string url =
-                    apiUrl + customer_id;
-
-                    MessageBox.Show(url);
-
-                    // =====================================
-                    // API REQUEST
-                    // =====================================
-
-                    HttpResponseMessage response =
-                    await client.GetAsync(url);
-
-                    response.EnsureSuccessStatusCode();
-
-                    // =====================================
-                    // JSON RESPONSE
-                    // =====================================
-
-                    string json =
-                    await response
-                    .Content
-                    .ReadAsStringAsync();
-
-                    MessageBox.Show(json);
-
-                    // =====================================
-                    // CONVERT JSON
-                    // =====================================
-
-                    List<OrderModel> orders =
-                    JsonConvert.DeserializeObject
-                    <List<OrderModel>>(json);
-
-                    // =====================================
-                    // DISPLAY
-                    // =====================================
-
-                    dgvList.DataSource = null;
-
-                    dgvList.DataSource = orders;
-
-                    // =====================================
-                    // HEADERS
-                    // =====================================
-
-                    dgvList.Columns["order_id"]
-                    .HeaderText = "ID";
-
-                    dgvList.Columns["fullname"]
-                    .HeaderText = "Customer";
-
-                    dgvList.Columns["equipment_name"]
-                    .HeaderText = "Equipment";
-
-                    dgvList.Columns["quantity"]
-                    .HeaderText = "Qty";
-
-                    dgvList.Columns["total_amount"]
-                    .HeaderText = "Total";
-
-                    dgvList.Columns["payment_status"]
-                    .HeaderText = "Status";
-
-                    dgvList.Columns["order_date"]
-                    .HeaderText = "Date";
-
-                    dgvList.AutoSizeColumnsMode =
-                    DataGridViewAutoSizeColumnsMode.Fill;
+                    return;
                 }
+
+                List<OrderModel> orders =
+                JsonConvert.DeserializeObject
+                <List<OrderModel>>(json);
+
+                dgvList.DataSource = null;
+
+                dgvList.DataSource = orders;
+
+                // HEADERS
+
+                dgvList.Columns["order_id"]
+                .HeaderText = "Order ID";
+
+                dgvList.Columns["fullname"]
+                .HeaderText = "Customer";
+
+                dgvList.Columns["equipment_name"]
+                .HeaderText = "Equipment";
+
+                dgvList.Columns["quantity"]
+                .HeaderText = "Quantity";
+
+                dgvList.Columns["total_amount"]
+                .HeaderText = "Total";
+
+                dgvList.Columns["payment_status"]
+                .HeaderText = "Status";
+
+                dgvList.Columns["order_date"]
+                .HeaderText = "Date";
+
+                dgvList.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    ex.Message
+                );
             }
         }
 

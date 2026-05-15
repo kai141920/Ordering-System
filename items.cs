@@ -11,14 +11,21 @@ namespace Ordering_System
     public partial class items : Form
     {
         // =========================================
-        // API URLS
+        // API
         // =========================================
 
         string equipmentUrl =
-        "http://localhost:3000/api/equipment";
+        "http://localhost:3000/api/equipments";
 
         string orderUrl =
         "http://localhost:3000/api/order";
+
+        // =========================================
+        // HTTP CLIENT
+        // =========================================
+
+        HttpClient client =
+        new HttpClient();
 
         // =========================================
         // EQUIPMENT LIST
@@ -35,145 +42,63 @@ namespace Ordering_System
         }
 
         // =========================================
-        // FORM LOAD
+        // LOAD EQUIPMENTS
         // =========================================
 
-        private async void items_Load(
-            object sender,
-            EventArgs e)
-        {
-            // =====================================
-            // DISPLAY CUSTOMER NAME
-            // =====================================
-
-            txtFullname.Text =
-            Session.fullname;
-
-            // =====================================
-            // QUANTITY DEFAULT
-            // =====================================
-
-            nudQty.Minimum = 1;
-
-            nudQty.Value = 1;
-
-            // =====================================
-            // LOAD EQUIPMENT
-            // =====================================
-
-            await LoadEquipment();
-        }
-
-        // =========================================
-        // LOAD EQUIPMENT
-        // =========================================
-
-        private async Task LoadEquipment()
+        private async Task LoadEquipments()
         {
             try
             {
-                using (HttpClient client =
-                    new HttpClient())
+                HttpResponseMessage response =
+                await client.GetAsync(
+                    equipmentUrl
+                );
+
+                string json =
+                await response.Content
+                .ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
                 {
-                    HttpResponseMessage response =
-                    await client.GetAsync(
-                        equipmentUrl
+                    MessageBox.Show(json);
+                    return;
+                }
+
+                equipmentList =
+                JsonConvert.DeserializeObject
+                <List<EquipmentModel>>(json);
+
+                if (equipmentList == null)
+                {
+                    MessageBox.Show(
+                        "No equipment found."
                     );
 
-                    response.EnsureSuccessStatusCode();
+                    return;
+                }
 
-                    string json =
-                    await response.Content
-                    .ReadAsStringAsync();
+                cmbEquipment.DataSource = null;
 
-                    // DEBUG JSON
+                cmbEquipment.DisplayMember =
+                "equipment_name";
 
-                    // MessageBox.Show(json);
+                cmbEquipment.ValueMember =
+                "id";
 
-                    equipmentList =
-                    JsonConvert.DeserializeObject
-                    <List<EquipmentModel>>(json);
+                cmbEquipment.DataSource =
+                equipmentList;
 
-                    // CLEAR FIRST
-
-                    cmbEquipment.DataSource = null;
-
-                    // SET DATASOURCE
-
-                    cmbEquipment.DataSource =
-                    equipmentList;
-
-                    cmbEquipment.DisplayMember =
-                    "equipment_name";
-
-                    cmbEquipment.ValueMember =
-                    "id";
-
-                    // SELECT FIRST ITEM
-
-                    if (cmbEquipment.Items.Count > 0)
-                    {
-                        cmbEquipment.SelectedIndex = 0;
-                    }
+                if (cmbEquipment.Items.Count > 0)
+                {
+                    cmbEquipment.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error loading equipment:\n\n" +
                     ex.Message
                 );
             }
-        }
-
-        // =========================================
-        // EQUIPMENT CHANGED
-        // =========================================
-
-        private void cmbEquipment_SelectedIndexChanged(
-            object sender,
-            EventArgs e)
-        {
-            try
-            {
-                if (cmbEquipment.SelectedItem != null)
-                {
-                    EquipmentModel equipment =
-                    (EquipmentModel)cmbEquipment.SelectedItem;
-
-                    // =================================
-                    // PRICE
-                    // =================================
-
-                    selectedPrice =
-                    equipment.price;
-
-                    lblPrice.Text =
-                    "₱" +
-                    selectedPrice.ToString("N2");
-
-                    // =================================
-                    // COMPUTE TOTAL
-                    // =================================
-
-                    ComputeTotal();
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        // =========================================
-        // QUANTITY CHANGED
-        // =========================================
-
-        private void nudQty_ValueChanged(
-            object sender,
-            EventArgs e)
-        {
-            ComputeTotal();
         }
 
         // =========================================
@@ -182,6 +107,12 @@ namespace Ordering_System
 
         private void ComputeTotal()
         {
+            if (cmbEquipment.SelectedItem == null)
+            {
+                lblTotal.Text = "₱0.00";
+                return;
+            }
+
             decimal total =
             selectedPrice *
             nudQty.Value;
@@ -201,43 +132,55 @@ namespace Ordering_System
         {
             try
             {
+                // =================================
+                // CHECK EQUIPMENT
+                // =================================
+                if (Session.customer_id <= 0)
+                {
+                    MessageBox.Show(
+                        "Customer not logged in."
+                    );
+
+                    return;
+                }
+
                 if (cmbEquipment.SelectedItem == null)
                 {
                     MessageBox.Show(
-                        "Please select equipment."
+                        "Select equipment"
                     );
 
                     return;
                 }
 
                 EquipmentModel equipment =
-                (EquipmentModel)cmbEquipment.SelectedItem;
+                (EquipmentModel)
+                cmbEquipment.SelectedItem;
+
+                int qty =
+                Convert.ToInt32(
+                    nudQty.Value
+                );
 
                 decimal total =
-                selectedPrice *
-                nudQty.Value;
+                equipment.price * qty;
 
-                // =====================================
+                // =================================
                 // ORDER DATA
-                // =====================================
+                // =================================
 
                 var orderData = new
                 {
                     customer_id =
                     Session.customer_id,
 
-                    equipment_id =
+                                    equipment_id =
                     equipment.id,
 
-                    quantity =
-                    Convert.ToInt32(
-                        nudQty.Value
-                    ),
+                                    quantity =
+                    qty,
 
-                    total_amount =
-                    total,
-
-                    payment_status =
+                                    payment_status =
                     "Pending"
                 };
 
@@ -246,46 +189,49 @@ namespace Ordering_System
                     orderData
                 );
 
-                var content =
+                StringContent content =
                 new StringContent(
                     json,
                     Encoding.UTF8,
                     "application/json"
                 );
 
-                using (HttpClient client =
-                    new HttpClient())
+                // =================================
+                // API REQUEST
+                // =================================
+
+                HttpResponseMessage response =
+                await client.PostAsync(
+                    orderUrl,
+                    content
+                );
+
+                string result =
+                await response.Content
+                .ReadAsStringAsync();
+
+                // =================================
+                // SUCCESS
+                // =================================
+
+                if (response.IsSuccessStatusCode)
                 {
-                    HttpResponseMessage response =
-                    await client.PostAsync(
-                        orderUrl,
-                        content
+                    MessageBox.Show(
+                        "Purchase Successful!"
                     );
 
-                    string result =
-                    await response.Content
-                    .ReadAsStringAsync();
+                    purchase p =
+                    new purchase();
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        MessageBox.Show(
-                            "Purchase Successful!"
-                        );
+                    p.Show();
 
-                        purchase p =
-                        new purchase();
-
-                        p.Show();
-
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show(
-                            "Purchase Failed\n\n" +
-                            result
-                        );
-                    }
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        result
+                    );
                 }
             }
             catch (Exception ex)
@@ -296,32 +242,81 @@ namespace Ordering_System
             }
         }
 
-        // =========================================
-        // LABEL CLICK
-        // =========================================
-
-        private void label1_Click(
-            object sender,
-            EventArgs e)
+        private void cmbEquipment_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            try
+            {
+                if (cmbEquipment.SelectedItem != null)
+                {
+                    EquipmentModel equipment =
+                    (EquipmentModel)
+                    cmbEquipment.SelectedItem;
 
+                    // =============================
+                    // PRICE
+                    // =============================
+
+                    selectedPrice =
+                    equipment.price;
+
+                    lblPrice.Text =
+                    "₱" +
+                    selectedPrice.ToString("N2");
+
+                    // =============================
+                    // TOTAL
+                    // =============================
+
+                    ComputeTotal();
+                }
+            }
+            catch
+            {
+
+            }
         }
-    }
 
-    // =========================================
-    // EQUIPMENT MODEL
-    // =========================================
+        private void nudQty_ValueChanged_1(object sender, EventArgs e)
+        {
+            ComputeTotal();
+        }
 
-    public class EquipmentModel
-    {
-        public int id { get; set; }
+        private async void items_Load_1(object sender, EventArgs e)
+        {
+            // DISPLAY CUSTOMER
 
-        public string equipment_name { get; set; }
+            txtFullname.Text =
+            Session.fullname;
 
-        public string category { get; set; }
+            // QUANTITY
 
-        public decimal price { get; set; }
+            nudQty.Minimum = 1;
+            nudQty.Value = 1;
 
-        public int stock { get; set; }
+            // LOAD EQUIPMENTS
+
+            await LoadEquipments();
+
+            // UPDATE TOTAL
+
+            ComputeTotal();
+        }
+
+        // =========================================
+        // MODEL
+        // =========================================
+
+        public class EquipmentModel
+        {
+            public int id { get; set; }
+
+            public string equipment_name { get; set; }
+
+            public string category { get; set; }
+
+            public decimal price { get; set; }
+
+            public int stock { get; set; }
+        }
     }
 }
