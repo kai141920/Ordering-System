@@ -1,0 +1,22 @@
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\bin\Debug\net8.0-windows\Ordering System.exe
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\bin\Debug\net8.0-windows\Ordering System.deps.json
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\bin\Debug\net8.0-windows\Ordering System.runtimeconfig.json
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\bin\Debug\net8.0-windows\Ordering System.dll
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\bin\Debug\net8.0-windows\Ordering System.pdb
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering_System.Form1.resources
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering_System.items.resources
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering_System.purchase.resources
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering_System.register.resources
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.csproj.GenerateResource.cache
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.AssemblyInfoInputs.cache
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.AssemblyInfo.cs
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.dll
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\refint\Ordering System.dll
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.pdb
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.genruntimeconfig.cache
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\ref\Ordering System.dll
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering System.csproj.AssemblyReference.cache
+C:\xampp\htdocs\PROJECTS\Kijaw\Ordering System\obj\Debug\net8.0-windows\Ordering.2AF400A9.Up2Date
