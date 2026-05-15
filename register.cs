@@ -15,29 +15,23 @@ namespace Ordering_System
             InitializeComponent();
         }
 
-        private async void btnCreate_Click(object sender, EventArgs e)
+        private async void btnCreate_Click_1(object sender, EventArgs e)
         {
             if (txtfullname.Text == "" ||
                 txtAddress.Text == "" ||
                 txtEmail.Text == "" ||
                 txtPassword.Text == "")
             {
-                MessageBox.Show(
-                    "Please fill all fields."
-                );
-
+                MessageBox.Show("Please fill all fields.");
                 return;
             }
 
             try
             {
                 // CORRECT API URL
-
-                string apiUrl =
-                "http://localhost:3000/api/customer/register";
+                string apiUrl = "http://localhost:3000/api/customer/register";
 
                 // DATA
-
                 var data = new
                 {
                     fullname = txtfullname.Text,
@@ -47,21 +41,15 @@ namespace Ordering_System
                 };
 
                 // JSON
+                string json = JsonConvert.SerializeObject(data);
 
-                string json =
-                JsonConvert.SerializeObject(data);
-
-                var content =
-                new StringContent(
-                    json,
-                    Encoding.UTF8,
+                var content = new StringContent(json, Encoding.UTF8,
                     "application/json"
                 );
 
                 using (HttpClient client = new HttpClient())
                 {
-                    HttpResponseMessage response =
-                    await client.PostAsync(
+                    HttpResponseMessage response = await client.PostAsync(
                         apiUrl,
                         content
                     );
@@ -75,7 +63,9 @@ namespace Ordering_System
                             "Registration Successful!"
                         );
 
-                      
+                        Form1 login = new Form1();
+                        login.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -87,9 +77,7 @@ namespace Ordering_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    ex.Message
-                );
+                MessageBox.Show(ex.Message);
             }
         }
     }

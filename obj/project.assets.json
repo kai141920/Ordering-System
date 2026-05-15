@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Ordering System.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\Ordering System.csproj",
       "projectName": "Ordering System",
-      "projectPath": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Ordering System.csproj",
+      "projectPath": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\Ordering System.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\obj\\",
+      "outputPath": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

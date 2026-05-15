@@ -1,46 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\",
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\ordering system\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|C:\\xampp\\htdocs\\Kijaw\\Ordering System\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\ordering system\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\ordering system\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\ordering system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\kijaw\\ordering system\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|C:\\xampp\\htdocs\\Kijaw\\Ordering System\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|C:\\xampp\\htdocs\\Kijaw\\Ordering System\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|c:\\xampp\\htdocs\\kijaw\\ordering system\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906B09E5-06F5-44BD-B869-6A4D2A56321A}|Ordering System.csproj|solutionrelative:register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Form1.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Form1.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAgwIAAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAgwBAAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T02:26:41.293Z",
               "IsPinned": true,
@@ -68,11 +60,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Form1.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Form1.cs [Design]",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-11T03:20:22.887Z",
@@ -81,51 +73,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "register.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\register.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\register.cs",
               "RelativeDocumentMoniker": "register.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\PROJECTS\\Kijaw\\Ordering System\\register.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\PROJECTS\\Kijaw\\Ordering System\\register.cs [Design]",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\register.cs [Design]",
+              "RelativeToolTip": "register.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T02:08:17.638Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "register.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\register.cs",
-              "RelativeDocumentMoniker": "register.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\register.cs",
-              "RelativeToolTip": "register.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAYwCQAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T03:04:51.944Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "purchase.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\purchase.cs",
-              "RelativeDocumentMoniker": "purchase.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\purchase.cs [Design]",
-              "RelativeToolTip": "purchase.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T02:13:28.162Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
+              "Title": "register.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\register.cs",
+              "RelativeDocumentMoniker": "register.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\register.cs",
+              "RelativeToolTip": "register.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T03:04:51.944Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "purchase.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\purchase.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\purchase.cs",
               "RelativeDocumentMoniker": "purchase.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\purchase.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\purchase.cs",
               "RelativeToolTip": "purchase.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAYwHwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAwwBcBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T03:39:51.775Z",
               "IsPinned": true,
@@ -134,51 +115,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "items.cs [Design]",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\items.cs",
-              "RelativeDocumentMoniker": "items.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\items.cs [Design]",
-              "RelativeToolTip": "items.cs [Design]",
+              "Title": "purchase.cs [Design]",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\purchase.cs",
+              "RelativeDocumentMoniker": "purchase.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\purchase.cs [Design]",
+              "RelativeToolTip": "purchase.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T03:44:25.738Z",
+              "WhenOpened": "2026-05-15T15:02:29.962Z",
+              "IsPinned": true,
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "items.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\items.cs",
+              "DocumentIndex": 1,
+              "Title": "items.cs [Design]",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\items.cs",
               "RelativeDocumentMoniker": "items.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\items.cs",
-              "RelativeToolTip": "items.cs",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAnwMsAAAAnAAAAAAAAAA==",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\items.cs [Design]*",
+              "RelativeToolTip": "items.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T03:44:25.738Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "items.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\items.cs",
+              "RelativeDocumentMoniker": "items.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Ordering System\\items.cs*",
+              "RelativeToolTip": "items.cs*",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowH0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T02:18:07.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T10:07:23.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Session.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Session.cs",
-              "RelativeDocumentMoniker": "Session.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\Kijaw\\Kijaw\\Ordering System\\Session.cs",
-              "RelativeToolTip": "Session.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T10:17:53.474Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

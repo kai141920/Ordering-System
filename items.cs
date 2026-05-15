@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,20 +78,43 @@ namespace Ordering_System
                     return;
                 }
 
+                // =====================================
+                // REMOVE STOCK 0
+                // =====================================
+
+                equipmentList =
+                equipmentList
+                .Where(x => x.stock > 0)
+                .ToList();
+
+                // =====================================
+                // DISTINCT EQUIPMENT NAMES
+                // =====================================
+
+                var distinctEquipments =
+                equipmentList
+                .Select(x => x.equipment_name)
+                .Distinct()
+                .ToList();
+
+                // =====================================
+                // LOAD COMBOBOX
+                // =====================================
+
                 cmbEquipment.DataSource = null;
 
-                cmbEquipment.DisplayMember =
-                "equipment_name";
-
-                cmbEquipment.ValueMember =
-                "id";
-
                 cmbEquipment.DataSource =
-                equipmentList;
+                distinctEquipments;
 
-                if (cmbEquipment.Items.Count > 0)
+                // =====================================
+                // NO AVAILABLE STOCK
+                // =====================================
+
+                if (distinctEquipments.Count == 0)
                 {
-                    cmbEquipment.SelectedIndex = 0;
+                    MessageBox.Show(
+                        "No available equipment."
+                    );
                 }
             }
             catch (Exception ex)
@@ -107,12 +131,6 @@ namespace Ordering_System
 
         private void ComputeTotal()
         {
-            if (cmbEquipment.SelectedItem == null)
-            {
-                lblTotal.Text = "₱0.00";
-                return;
-            }
-
             decimal total =
             selectedPrice *
             nudQty.Value;
@@ -133,8 +151,9 @@ namespace Ordering_System
             try
             {
                 // =================================
-                // CHECK EQUIPMENT
+                // CHECK LOGIN
                 // =================================
+
                 if (Session.customer_id <= 0)
                 {
                     MessageBox.Show(
@@ -144,18 +163,26 @@ namespace Ordering_System
                     return;
                 }
 
-                if (cmbEquipment.SelectedItem == null)
+                // =================================
+                // CHECK CATEGORY
+                // =================================
+
+                if (cmbCategory.SelectedItem == null)
                 {
                     MessageBox.Show(
-                        "Select equipment"
+                        "Select category."
                     );
 
                     return;
                 }
 
+                // =================================
+                // SELECTED EQUIPMENT
+                // =================================
+
                 EquipmentModel equipment =
                 (EquipmentModel)
-                cmbEquipment.SelectedItem;
+                cmbCategory.SelectedItem;
 
                 int qty =
                 Convert.ToInt32(
@@ -174,13 +201,13 @@ namespace Ordering_System
                     customer_id =
                     Session.customer_id,
 
-                                    equipment_id =
+                    equipment_id =
                     equipment.id,
 
-                                    quantity =
+                    quantity =
                     qty,
 
-                                    payment_status =
+                    payment_status =
                     "Pending"
                 };
 
@@ -242,62 +269,119 @@ namespace Ordering_System
             }
         }
 
-        private void cmbEquipment_SelectedIndexChanged_1(object sender, EventArgs e)
+        // =========================================
+        // EQUIPMENT CHANGED
+        // =========================================
+
+        private void cmbEquipment_SelectedIndexChanged_1(
+            object sender,
+            EventArgs e)
         {
             try
             {
-                if (cmbEquipment.SelectedItem != null)
+                if (cmbEquipment.SelectedItem == null)
                 {
-                    EquipmentModel equipment =
-                    (EquipmentModel)
-                    cmbEquipment.SelectedItem;
+                    return;
+                }
 
-                    // =============================
-                    // PRICE
-                    // =============================
+                // =================================
+                // SELECTED EQUIPMENT NAME
+                // =================================
 
+                string selectedEquipment =
+                cmbEquipment.SelectedItem
+                .ToString();
+
+                // =================================
+                // FILTER CATEGORY
+                // =================================
+
+                var categories =
+                equipmentList
+                .Where(x =>
+                    x.equipment_name ==
+                    selectedEquipment
+                )
+                .ToList();
+
+                // =================================
+                // LOAD CATEGORY DROPDOWN
+                // =================================
+
+                cmbCategory.DataSource = null;
+
+                cmbCategory.DataSource =
+                categories;
+
+                cmbCategory.DisplayMember =
+                "category";
+
+                cmbCategory.ValueMember =
+                "id";
+
+                // =================================
+                // AUTO PRICE
+                // =================================
+
+                if (categories.Count > 0)
+                {
                     selectedPrice =
-                    equipment.price;
+                    categories[0].price;
 
                     lblPrice.Text =
                     "₱" +
                     selectedPrice.ToString("N2");
 
-                    // =============================
-                    // TOTAL
-                    // =============================
-
                     ComputeTotal();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(
+                    ex.Message
+                );
             }
         }
 
-        private void nudQty_ValueChanged_1(object sender, EventArgs e)
+        private void nudQty_ValueChanged_1(
+            object sender,
+            EventArgs e)
         {
             ComputeTotal();
         }
 
-        private async void items_Load_1(object sender, EventArgs e)
+        // =========================================
+        // FORM LOAD
+        // =========================================
+
+        private async void items_Load_1(
+            object sender,
+            EventArgs e)
         {
+            // =====================================
             // DISPLAY CUSTOMER
+            // =====================================
 
             txtFullname.Text =
             Session.fullname;
 
+            // =====================================
             // QUANTITY
+            // =====================================
 
             nudQty.Minimum = 1;
+
             nudQty.Value = 1;
 
+            // =====================================
             // LOAD EQUIPMENTS
+            // =====================================
 
             await LoadEquipments();
 
+            // =====================================
             // UPDATE TOTAL
+            // =====================================
 
             ComputeTotal();
         }
@@ -317,6 +401,72 @@ namespace Ordering_System
             public decimal price { get; set; }
 
             public int stock { get; set; }
+        }
+
+        // =========================================
+        // ORDER LIST
+        // =========================================
+
+        private void btnOrderList_Click(
+            object sender,
+            EventArgs e)
+        {
+            purchase purchaselist =
+            new purchase();
+
+            purchaselist.Show();
+
+            this.Hide();
+        }
+
+        // =========================================
+        // LOGOUT
+        // =========================================
+
+        private void btnLogout_Click(
+            object sender,
+            EventArgs e)
+        {
+            Form1 f =
+            new Form1();
+
+            f.Show();
+
+            this.Hide();
+        }
+
+        private void cmbCategory_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbCategory.SelectedItem != null)
+                {
+                    EquipmentModel equipment =
+                    (EquipmentModel)
+                    cmbCategory.SelectedItem;
+
+                    // =============================
+                    // UPDATE PRICE
+                    // =============================
+
+                    selectedPrice =
+                    equipment.price;
+
+                    lblPrice.Text =
+                    "₱" +
+                    selectedPrice.ToString("N2");
+
+                    // =============================
+                    // UPDATE TOTAL
+                    // =============================
+
+                    ComputeTotal();
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }
